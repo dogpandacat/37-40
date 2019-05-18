@@ -17,6 +17,9 @@ tomcat是根据收到的http请求里面的cookie，cookie里面有一个session
 但是如果是编程的方式，发起一个http 请求来调用微服务的web api的话，每次http请求调用，都是一个新的唯一的请求，并不会带上所谓的cookie数据，那么我就想知道
 tomcat收到web api调用请求后，是不是收到一次请求，就创建一个session（因为它在cookie里面找不到sessonId啊）
 
+第2个疑问，现在写程序，都会用到框架，比如用到springmvc，每次请求先由tomcat处理，再交给框架，最后到自己写的controller，即便tomcat不创建sesson，
+框架会不会因为功能实现上的原因，对每个请求，都会创建session，拿java web开发来说，request.getSession方法，万一框架调用了呢？
+
 #### 动机
 
 #### 行动
